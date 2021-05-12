@@ -62,7 +62,7 @@ namespace StopWatchTest
 }
 ``` 
 
-The following is an example of calling WinForm mode
+The following is an example of calling it in a WinForm application
 ``` C#
             DateTime dateTime = DateTime.Parse(textBox1.Text.Trim());
             Func<DateTime> func = () =>
