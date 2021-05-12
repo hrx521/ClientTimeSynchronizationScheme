@@ -61,3 +61,23 @@ namespace StopWatchTest
     }
 }
 ``` 
+
+The following is an example of calling WinForm mode
+``` C#
+            DateTime dateTime = DateTime.Parse(textBox1.Text.Trim());
+            Func<DateTime> func = () =>
+            {
+                System.Threading.Thread.Sleep(1500);//模拟网络耗时
+                    return dateTime;
+            };
+            TimeWatch.GetInstance(func, TimeSpan.FromSeconds(3));
+
+            Timer timer = new Timer();
+            timer.Enabled = true;
+            timer.Interval = 100;
+            timer.Start();
+            timer.Tick += (s, ee) =>
+            {
+                this.labelNowTime.Text = TimeWatch.DateTimeNow.ToString("yyyy-MM-dd HH:mm:ss fff");
+            };
+```
