@@ -49,7 +49,6 @@ namespace StopWatchTest
                     //(stopwatch.Elapsed-timeSpanElapsedBoforeRequst).TotalMilliseconds /2) 取请求往返耗时的一半，即执行该获取时间的工作所造成的延时。把这个延时要加进计时器里
                     timeSpanElapsedBoforeRequst = stopwatch.Elapsed;
                     initDateTime = (await Task.Run(() => CorrectingTimeStrategy.Invoke())).AddMilliseconds((stopwatch.Elapsed-timeSpanElapsedBoforeRequst).TotalMilliseconds /2) - stopwatch.Elapsed;
-                    var i = stopwatch.Elapsed;
                     await Task.Delay(CorrectingSpan);
                 } while (true);
             }
