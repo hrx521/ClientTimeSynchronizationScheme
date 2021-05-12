@@ -81,3 +81,5 @@ The following is an example of calling it in a WinForm application
                 this.labelNowTime.Text = TimeWatch.DateTimeNow.ToString("yyyy-MM-dd HH:mm:ss fff");
             };
 ```
+There is The complete source code in release part.You can load it there.
+Finally, I would like to harvest a few stars, because I have never had it. If it has a little reference value for you, I hope you can help me light up a star
